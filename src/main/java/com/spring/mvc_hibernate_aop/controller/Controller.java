@@ -38,7 +38,6 @@ public class Controller {
     public String saveEmployee(@ModelAttribute("employee") Employee employee) {
 
 
-
         employeeService.saveEmployee(employee);
 
         return "redirect:/";
@@ -53,6 +52,14 @@ public class Controller {
 
         return "employee-info";
 
+    }
+
+    @RequestMapping("/deleteEmployee")
+    public String deleteEmployee(@RequestParam("empId") int id) {
+
+        employeeService.deleteEmployee(id);
+
+        return "redirect:/";
     }
 
 }
